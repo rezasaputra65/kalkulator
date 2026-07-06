@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Kalkulator AI</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <div>
+        <h1>Kalkulator AI</h1>
+        <p class="sub">Kalkulator + chat pintar (offline) untuk bantu hitung & jelaskan.</p>
+      </div>
+      <div class="badge" id="aiBadge">AI: Aktif</div>
+    </header>
+
+    <main class="grid">
+      <!-- Kalkulator -->
+      <section class="card">
+        <div class="card-title">Kalkulator</div>
+
+        <div class="display">
+          <div class="label">Ekspresi</div>
+          <div class="expr" id="expr">0</div>
+
+          <div class="label result-label">Hasil</div>
+          <div class="result" id="result">0</div>
+        </div>
+
+        <div class="keys" role="group" aria-label="Tombol kalkulator">
+          <button class="key key-fn" data-action="clear">AC</button>
+          <button class="key key-fn" data-action="back">⌫</button>
+          <button class="key key-op" data-value="(">(</button>
+          <button class="key key-op" data-value=")">)</button>
+
+          <button class="key" data-value="7">7</button>
+          <button class="key" data-value="8">8</button>
+          <button class="key" data-value="9">9</button>
+          <button class="key key-op" data-value="/">÷</button>
+
+          <button class="key" data-value="4">4</button>
+          <button class="key" data-value="5">5</button>
+          <button class="key" data-value="6">6</button>
+          <button class="key key-op" data-value="*">×</button>
+
+          <button class="key" data-value="1">1</button>
+          <button class="key" data-value="2">2</button>
+          <button class="key" data-value="3">3</button>
+          <button class="key key-op" data-value="-">−</button>
+
+          <button class="key key-wide" data-value="0">0</button>
+          <button class="key" data-value=".">.</button>
+          <button class="key key-op" data-value="+">+</button>
+        </div>
+
+        <div class="actions">
+          <button class="btn btn-primary" id="btnEqual">= Hitung</button>
+          <button class="btn" id="btnToChat">Kirim ke AI</button>
+        </div>
+
+        <div class="hint">
+          Tip: Input teks seperti <b>hitung 12+7</b> atau <b>berapa 10*(3+2)</b>.
+        </div>
+      </section>
+
+      <!-- Chat AI -->
+      <section class="card card-chat">
+        <div class="card-title">Chat AI</div>
+
+        <div class="chat" id="chat" aria-live="polite"></div>
+
+        <form class="chat-form" id="chatForm">
+          <input
+            id="chatInput"
+            type="text"
+            placeholder="Tulis pertanyaan... (contoh: hitung 2+2)"
+            autocomplete="off"
+          />
+          <button class="btn btn-primary" type="submit">Kirim</button>
+        </form>
+
+        <div class="chat-foot">
+          <span class="muted">AI offline: tidak perlu internet, tidak memakai API.</span>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      Dibuat dengan HTML • CSS • JavaScript.
+    </footer>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
+
